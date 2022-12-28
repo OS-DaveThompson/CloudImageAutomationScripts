@@ -1,11 +1,10 @@
 #!/bin/bash
-mkdir /root/usr && mkdir /root/usr/bin && echo 'PATH="/root/usr/bin:$PATH"' >> .bashrc
+
+mkdir /root/usr
+mkdir /root/usr/bin
+echo 'PATH="/root/usr/bin:$PATH"' >> .bashrc
 PATH="/root/usr/bin:$PATH"
 
-echo '#!/bin/bash
-#
-#https://docs.docker.com/engine/install/debian/
-#https://docs.docker.com/compose/install/
 #
 apt-get update -y
 #
@@ -23,9 +22,6 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 #
 docker run hello-world
 #
-' > /root/usr/bin/olysoft-install-docker.sh
-
-chmod o+x /root/usr/bin/olysoft-install-docker.sh
 
 systemctl stop systemd-resolved.service
 systemctl disable systemd-resolved.service
@@ -58,11 +54,8 @@ echo "'America/LosAngeles'
       restart_policy:
         condition: any" >> docker-pods/pihole/docker-compose.yaml
 
-sh /root/usr/bin/olysoft-install-docker.sh
-
 cd /root/docker-pods/pihole
 
 docker compose up -d
 
 exit
-

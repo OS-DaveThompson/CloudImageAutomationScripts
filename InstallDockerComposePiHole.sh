@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# From the video named: Docker container and storage mount demo
+#==============================================================
 mkdir /root/usr
 mkdir /root/usr/bin
 echo 'PATH="/root/usr/bin:$PATH"' >> .bashrc

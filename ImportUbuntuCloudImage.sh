@@ -1,5 +1,5 @@
 #!/bin/bash
-# From the video Cloud Images are Speical
+# From the video Cloud Images are Special
 #========================================
 if [ $# != 3 ]
     then
